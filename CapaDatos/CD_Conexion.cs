@@ -6,8 +6,7 @@ namespace CapaDatos
     public class CD_Conexion
     {
         private readonly SqlConnection conexion = new SqlConnection(
-    "Server=ESME\\SQLEXPRESS;Database=TIENDA USUARIO;Integrated Security=true;TrustServerCertificate=true");
-
+   "Server=ESME\\SQLEXPRESS;Database=Tienda;Integrated Security=true;TrustServerCertificate=true");
         public SqlConnection AbrirConexion()
         {
             if (conexion.State == ConnectionState.Closed)
