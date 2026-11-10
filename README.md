@@ -56,4 +56,4 @@ Abrir `CapaDatos/CD_Conexion.cs` y revisar la cadena de conexión.
 - Xohitl Henriquez.
 - Alejandra Deleon.
 - Mayeli Santos.
-- Diego Rodriguez.
+- Diego Cerna.
