@@ -11,11 +11,22 @@ namespace CapaPresentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            using (var login = new FrmLogin())
+            while (true)
             {
-                if (login.ShowDialog() == DialogResult.OK)
+                using (var login = new FrmLogin())
                 {
-                    Application.Run(new Form1());
+                    // Si pulsa "Salir" o cierra el login, termina el programa
+                    if (login.ShowDialog() != DialogResult.OK)
+                        break;
+
+                    using (var principal = new Form1(login.UsuarioActual))
+                    {
+                        Application.Run(principal);
+
+                        // Si cerró con la X (no con "Cerrar sesión"), termina el programa
+                        if (!principal.CerrarSesion)
+                            break;
+                    }
                 }
             }
         }

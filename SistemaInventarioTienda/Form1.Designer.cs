@@ -47,6 +47,7 @@ namespace CapaPresentacion
             btnCancelar = new Button();
             btnDepartamentos = new Button();
             btnProveedores = new Button();
+            btnCerrarSesion = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -300,11 +301,22 @@ namespace CapaPresentacion
             btnProveedores.UseVisualStyleBackColor = true;
             btnProveedores.Click += btnProveedores_Click;
             // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.Location = new Point(773, 612);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(138, 37);
+            btnCerrarSesion.TabIndex = 20;
+            btnCerrarSesion.Text = "Cerrar sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 661);
+            Controls.Add(btnCerrarSesion);
             Controls.Add(btnProveedores);
             Controls.Add(btnDepartamentos);
             Controls.Add(dgvProductos);
@@ -370,5 +382,6 @@ namespace CapaPresentacion
         private Button btnCancelar;
         private Button btnDepartamentos;
         private Button btnProveedores;
+        private Button btnCerrarSesion;
     }
 }

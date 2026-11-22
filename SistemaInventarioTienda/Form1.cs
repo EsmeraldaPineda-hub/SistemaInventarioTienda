@@ -1,3 +1,4 @@
+using CapaDatos;
 using CapaNegocio;
 using System.Data;
 
@@ -205,6 +206,33 @@ namespace CapaPresentacion
         {
             new FrmProveedores().ShowDialog();
             CargarCombos();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show(
+    "¿Estás seguro de que deseas cerrar sesión?",
+    "Cerrar sesión",
+    MessageBoxButtons.YesNo,
+    MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                CerrarSesion = true;
+                Close();
+            }
+
+        }
+        private readonly EntidadUsuario? usuarioActual;
+
+        // true solo si el usuario eligió "Cerrar sesión"
+        public bool CerrarSesion { get; private set; }
+
+        public Form1(EntidadUsuario? usuario) : this()
+        {
+            usuarioActual = usuario;
+            if (usuario != null)
+                Text = "Sistema de Inventario - Usuario: " + usuario.NombreUsuario;
         }
     }
 }
